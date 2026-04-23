@@ -21,7 +21,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Disability Dialogs: Beyond Accommodations',
+        title: 'Disability Dialogues: Beyond Accommodations',
       },
     ],
     links: [
