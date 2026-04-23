@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import HTMLFlipBook from 'react-pageflip'
 import React from 'react'
 import { beyondAccommodationsPages } from '#/lib/pages'
+import { Separator } from '#/components/ui/separator'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -75,16 +76,16 @@ function App() {
       <div className="z-10 text-purple-100 flex gap-5">
         <a
           target="_blank"
-          href="/public/01_beyond_accommodations/Disability Dialogues: Beyond Accommodations (Formatted_Full).pdf"
-          className="hover:underline"
+          href="https://drive.google.com/file/d/1Fr_WJtYM72ViUf2NKsCjQMdyOBZ1Qg5n/view?usp=drive_link"
+          className="hover:underline text-center flex-1"
         >
           Download PDF
         </a>
-        <span>|</span>
+        <Separator orientation="vertical" />
         <a
           target="_blank"
-          href="/public/01_beyond_accommodations/Full Printable.pdf"
-          className="hover:underline"
+          href="https://drive.google.com/file/d/1UcqOxq8dleTOBLFJCjxvDPzxzPPTznkE/view?usp=drive_link"
+          className="hover:underline text-center flex-1"
         >
           Download Fold-Your-Own Printable
         </a>
