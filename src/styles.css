@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Kablammo&family=Ribeye&display=swap');
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
@@ -38,6 +39,9 @@
   --font-sans: Roboto, sans-serif;
   --font-serif: Playfair Display, serif;
   --font-mono: Fira Code, monospace;
+  --font-display1: 'Kablammo', sans-serif;
+  --font-display2: 'Ribeye', sans-serif;
+  --font-display3: 'Barriecito', sans-serif;
   --radius: 0.625rem;
   --shadow-x: 2px;
   --shadow-y: 2px;
@@ -167,6 +171,10 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
+
+  --font-display1: var(--font-display1);
+  --font-display2: var(--font-display2);
+  --font-display3: var(--font-display3);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
