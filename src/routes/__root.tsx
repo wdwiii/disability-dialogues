@@ -24,8 +24,7 @@ export const Route = createRootRoute({
         title: 'Disability Dialogues: Beyond Accommodations',
       },
       {
-        property: 'og:image',
-        content: '/public/disability dialogues full.png',
+        'og:image': '/public/disability dialogues full.png',
       },
     ],
     links: [
