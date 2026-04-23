@@ -1,0 +1,18 @@
+export const beyondAccommodationsPages = [
+  { src: '/01_beyond_accommodations/01. front cover.png' },
+  { src: '/01_beyond_accommodations/02. models.png' },
+  { src: '/01_beyond_accommodations/03. crip time.png' },
+  { src: '/01_beyond_accommodations/04. osxa.png' },
+  { src: '/01_beyond_accommodations/05. care.png' },
+  { src: '/01_beyond_accommodations/06. center terms a.png' },
+  { src: '/01_beyond_accommodations/07. center terms b.png' },
+  { src: '/01_beyond_accommodations/08. dog.jpg' },
+  { src: '/01_beyond_accommodations/09. classroom access.jpg' },
+  { src: '/01_beyond_accommodations/10. lazy.png' },
+  { src: '/01_beyond_accommodations/11. things i hate.png' },
+  { src: '/01_beyond_accommodations/12. networking.png' },
+  { src: '/01_beyond_accommodations/13. reading recs.jpg' },
+  { src: '/01_beyond_accommodations/14. bio1.jpg' },
+  { src: '/01_beyond_accommodations/15. bio2.jpg' },
+  { src: '/01_beyond_accommodations/16. back cover.png' },
+]
