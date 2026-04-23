@@ -72,6 +72,23 @@ function App() {
           ))}
         </HTMLFlipBook>
       </div>
+      <div className="z-10 text-purple-100 flex gap-5">
+        <a
+          target="_blank"
+          href="/public/01_beyond_accommodations/Disability Dialogues: Beyond Accommodations (Formatted_Full).pdf"
+          className="hover:underline"
+        >
+          Download PDF
+        </a>
+        <span>|</span>
+        <a
+          target="_blank"
+          href="/public/01_beyond_accommodations/Full Printable.pdf"
+          className="hover:underline"
+        >
+          Download Fold-Your-Own Printable
+        </a>
+      </div>
     </main>
   )
 }
