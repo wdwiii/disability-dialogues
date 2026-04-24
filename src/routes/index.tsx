@@ -1,12 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
 import HTMLFlipBook from 'react-pageflip'
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { beyondAccommodationsPages } from '#/lib/pages'
 import { Separator } from '#/components/ui/separator'
 import { Button } from '#/components/ui/button'
 import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react'
 
-export const Route = createFileRoute('/')({ component: App })
+const totalPages = beyondAccommodationsPages.length
+
+export const Route = createFileRoute('/')({
+  component: App,
+  validateSearch: (search: Record<string, unknown>) => ({
+    page: Math.min(Math.max(1, Number(search.page) || 1), totalPages),
+  }),
+})
 
 const PageCover = React.forwardRef<
   HTMLDivElement,
@@ -33,13 +40,18 @@ const Page = React.forwardRef<
 ))
 
 function App() {
+  const { page } = Route.useSearch()
+  const navigate = Route.useNavigate()
   const flipBookRef = useRef<any>(null)
-  const [currentPage, setCurrentPage] = useState(0)
-  const totalPages = beyondAccommodationsPages.length
 
+  const handleFlip = (e: { data: number }) =>
+    navigate({ search: { page: e.data + 1 }, replace: true })
   const handlePrev = () => flipBookRef.current?.pageFlip().flipPrev()
   const handleNext = () => flipBookRef.current?.pageFlip().flipNext()
-  const handleReset = () => flipBookRef.current?.pageFlip().turnToPage(0)
+  const handleReset = () => {
+    flipBookRef.current?.pageFlip().turnToPage(0)
+    navigate({ search: { page: 1 }, replace: true })
+  }
 
   return (
     <main className="flex flex-col items-center justify-center gap-5 h-svh overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative p-5">
@@ -75,7 +87,7 @@ function App() {
           showCover={true}
           mobileScrollSupport={true}
           autoSize={true}
-          startPage={0}
+          startPage={page - 1}
           drawShadow={true}
           flippingTime={1000}
           usePortrait={true}
@@ -87,27 +99,27 @@ function App() {
           disableFlipByClick={false}
           style={{}}
           className="shadow-lg book-cover col-start-2 col-span-5"
-          onFlip={(e) => setCurrentPage(e.data)}
+          onFlip={handleFlip}
         >
-          {beyondAccommodationsPages.map((page, index) => (
+          {beyondAccommodationsPages.map((pg, index) => (
             <Page number={index + 1} key={index}>
-              <img className="h-full w-full" src={page.src} />
+              <img className="h-full w-full" src={pg.src} />
             </Page>
           ))}
         </HTMLFlipBook>
       </div>
       <div className="z-10  grid grid-cols-3 items-center gap-x-4 gap-y-2">
         <span className="text-purple-200 text-sm text-center col-span-full">
-          {currentPage + 1} / {totalPages}
+          {page} / {totalPages}
         </span>
-        <Button onClick={handlePrev} disabled={currentPage === 0}>
+        <Button onClick={handlePrev} disabled={page === 1}>
           <ArrowLeft /> Prev
         </Button>
 
         <Button onClick={handleReset}>
           Start Over <RotateCcw />
         </Button>
-        <Button onClick={handleNext} disabled={currentPage >= totalPages - 1}>
+        <Button onClick={handleNext} disabled={page >= totalPages}>
           Next <ArrowRight />
         </Button>
       </div>
