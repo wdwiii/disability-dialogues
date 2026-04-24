@@ -45,7 +45,7 @@ function App() {
     <main className="flex flex-col items-center justify-center gap-5 h-svh  overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative p-5">
       <div className="bg-linear-to-br from-black/95 via-purple-950/95 to-black/95 h-full w-full absolute left-0 top-0 "></div>
       <h1 className="text-purple-50 text-3xl lg:text-6xl text-center text-balance font-medium z-10 font-display3">
-        Disability Dialogues: Beyond Accommodation
+        Disability Dialogues, Beyond Accommodation
       </h1>
       <div className="max-w-4xl w-full">
         <HTMLFlipBook
@@ -106,7 +106,7 @@ function App() {
       <div className="z-10 text-purple-100 flex  item-center justify-center text-lg gap-5 w-full">
         <a
           target="_blank"
-          href="https://drive.google.com/file/d/1Fr_WJtYM72ViUf2NKsCjQMdyOBZ1Qg5n/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1ihTxrP9KWmk-u2QSRKHlgTpPFMrdwgSG/view?usp=drive_link"
           className="hover:underline text-center "
         >
           Download PDF
@@ -114,7 +114,7 @@ function App() {
         <Separator orientation="vertical" />
         <a
           target="_blank"
-          href="https://drive.google.com/file/d/1UcqOxq8dleTOBLFJCjxvDPzxzPPTznkE/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1CkLrSppq0qnEsjU_jkXr5jCZQu3UyLuu/view?usp=drive_linkk"
           className="hover:underline text-center "
         >
           Download Fold-Your-Own Printable
