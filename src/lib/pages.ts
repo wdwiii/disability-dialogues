@@ -12,7 +12,7 @@ export const beyondAccommodationsPages = [
   { src: '/01_beyond_accommodations/11. classroom access.jpg' },
   { src: '/01_beyond_accommodations/12. networking.png' },
   { src: '/01_beyond_accommodations/13. reading recs.jpg' },
-  { src: '/01_beyond_accommodations/14. back cover.png' },
-  { src: '/01_beyond_accommodations/15. bio1.jpg' },
-  { src: '/01_beyond_accommodations/16. bio2.jpg' },
+  { src: '/01_beyond_accommodations/14. bio1.jpg' },
+  { src: '/01_beyond_accommodations/15. bio2.jpg' },
+  { src: '/01_beyond_accommodations/16. back cover.png' },
 ]
