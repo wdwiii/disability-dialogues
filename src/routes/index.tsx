@@ -42,12 +42,26 @@ function App() {
   const handleReset = () => flipBookRef.current?.pageFlip().turnToPage(0)
 
   return (
-    <main className="flex flex-col items-center justify-center gap-5 h-svh  overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative p-5">
-      <div className="bg-linear-to-br from-black/95 via-purple-950/95 to-black/95 h-full w-full absolute left-0 top-0 "></div>
-      <h1 className="text-purple-50 text-3xl lg:text-6xl text-center text-balance font-medium z-10 font-display3">
+    <main className="flex flex-col items-center justify-center gap-5 h-svh overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative p-5">
+      <div className="bg-linear-to-br from-black/95 via-purple-950/95 to-black/95 h-full w-full absolute left-0 top-0"></div>
+      <h1 className="text-purple-50 text-2xl md:text-3xl lg:text-6xl text-center text-balance font-medium z-10 font-display3">
         Disability Dialogues, Beyond Accommodation
       </h1>
-      <div className="max-w-4xl w-full">
+      <div className="max-w-5xl w-full flex flex-col md:grid grid-cols-5">
+        <div className="text-purple-50 text-xl hidden md:block z-10 px-2 ">
+          <h2 className="text-2xl font-display3 ">The people who made this</h2>
+          <Separator />
+          <ul className="mt-5 space-y-2 text-xl">
+            <li>Caroline Atwood</li>
+            <li>Philip Bonanno</li>
+            <li>Kristina Bowers</li>
+            <li>Cora Butcher-Spellman</li>
+            <li>Talia Kibsey</li>
+            <li>Becca Ruger</li>
+            <li>Dana Walden</li>
+          </ul>
+        </div>
+
         <HTMLFlipBook
           ref={flipBookRef}
           width={550}
@@ -72,7 +86,7 @@ function App() {
           showPageCorners={true}
           disableFlipByClick={false}
           style={{}}
-          className="shadow-lg book-cover"
+          className="shadow-lg book-cover col-start-2 col-span-5"
           onFlip={(e) => setCurrentPage(e.data)}
         >
           {beyondAccommodationsPages.map((page, index) => (
@@ -82,28 +96,22 @@ function App() {
           ))}
         </HTMLFlipBook>
       </div>
-      <div className="z-10 flex items-center gap-4">
-        <Button
-          onClick={handlePrev}
-          disabled={currentPage === 0}
-          // className="px-4 py-2 bg-purple-800 text-purple-100 rounded-lg hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-        >
-          <ArrowLeft /> Prev
-        </Button>
-        <span className="text-purple-200 text-sm">
+      <div className="z-10  grid grid-cols-3 items-center gap-x-4 gap-y-2">
+        <span className="text-purple-200 text-sm text-center col-span-full">
           {currentPage + 1} / {totalPages}
         </span>
-        {currentPage + 1 < totalPages ? (
-          <Button onClick={handleNext} disabled={currentPage >= totalPages - 1}>
-            Next <ArrowRight />
-          </Button>
-        ) : (
-          <Button onClick={handleReset}>
-            Start Over <RotateCcw />
-          </Button>
-        )}
+        <Button onClick={handlePrev} disabled={currentPage === 0}>
+          <ArrowLeft /> Prev
+        </Button>
+
+        <Button onClick={handleReset}>
+          Start Over <RotateCcw />
+        </Button>
+        <Button onClick={handleNext} disabled={currentPage >= totalPages - 1}>
+          Next <ArrowRight />
+        </Button>
       </div>
-      <div className="z-10 text-purple-100 flex  item-center justify-center text-lg gap-5 w-full">
+      <div className="z-10 text-purple-100 flex  item-center justify-center text-sm md:text-lg gap-5 w-full">
         <a
           target="_blank"
           href="https://drive.google.com/file/d/1ihTxrP9KWmk-u2QSRKHlgTpPFMrdwgSG/view?usp=drive_link"
