@@ -35,12 +35,12 @@ const Page = React.forwardRef<
 
 function App() {
   return (
-    <main className=" flex flex-col items-center justify-center gap-5  h-svh overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative px-5">
+    <main className="flex flex-col items-center justify-center gap-5 h-svh  overflow-hidden bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)] bg-contain relative p-5">
       <div className="bg-linear-to-br from-black/95 via-purple-950/95 to-black/95 h-full w-full absolute left-0 top-0 "></div>
       <h1 className="text-purple-50 text-3xl lg:text-6xl text-center text-balance font-medium z-10 font-display3">
         Disability Dialogues: Beyond Accommodations
       </h1>
-      <div className="max-w-5xl w-full">
+      <div className="max-w-4xl w-full">
         <HTMLFlipBook
           width={550}
           height={733}
@@ -64,7 +64,7 @@ function App() {
           showPageCorners={true}
           disableFlipByClick={false}
           style={{}}
-          className="shadow-lg bg-purple-200"
+          className="shadow-lg book-cover"
         >
           {beyondAccommodationsPages.map((page, index) => (
             <Page number={index + 1} key={index}>
@@ -73,7 +73,7 @@ function App() {
           ))}
         </HTMLFlipBook>
       </div>
-      <div className="z-10 text-purple-100 flex gap-5">
+      <div className="z-10 text-purple-100 flex  item-center gap-5">
         <a
           target="_blank"
           href="https://drive.google.com/file/d/1Fr_WJtYM72ViUf2NKsCjQMdyOBZ1Qg5n/view?usp=drive_link"
