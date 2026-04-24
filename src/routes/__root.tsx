@@ -21,10 +21,25 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Disability Dialogues: Beyond Accommodations',
+        title: 'Disability Dialogues, Beyond Accommodations',
       },
       {
-        'og:image': '/public/disability dialogues full.png',
+        name: 'description',
+        content:
+          'Moving beyond accommodation frameworks and addressing the cultural elements facing disabled, sick, and neurodivergent graduate students/scholars in academia.',
+      },
+      {
+        property: 'og:title',
+        content: 'Disability Dialogues, Beyond Accommodation',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Moving beyond accommodation frameworks and addressing the cultural elements facing disabled, sick, and neurodivergent graduate students/scholars in academia.',
+      },
+      {
+        property: 'og:image',
+        content: '/01_beyond_accommodations/og-image.jpg',
       },
     ],
     links: [
@@ -32,6 +47,7 @@ export const Route = createRootRoute({
         rel: 'stylesheet',
         href: appCss,
       },
+      { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
   shellComponent: RootDocument,
@@ -43,7 +59,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="font-sans antialiased wrap:anywhere max-h-screen  bg-[url(/public/01_beyond_accommodations/front.jpg),url(/public/01_beyond_accommodations/back.jpg)]">
+      <body className="font-sans antialiased wrap:anywhere max-h-screen  bg-[url(/01_beyond_accommodations/front.jpg),url(/01_beyond_accommodations/back.jpg)]">
         <ClerkProvider>
           {children}
 
