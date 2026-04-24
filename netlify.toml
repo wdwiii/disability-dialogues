@@ -1,6 +1,9 @@
 [build]
   command = "vite build"
   dir = "dist/client"
+
+[build.environment]
+  VITE_SITE_URL = "$URL"
 [dev]
   command = "npm run dev"
   targetPort = 3000

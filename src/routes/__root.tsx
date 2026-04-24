@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/01_beyond_accommodations/og-image.jpg',
+        content: `${import.meta.env.VITE_SITE_URL}/01_beyond_accommodations/og-image.jpg`,
       },
     ],
     links: [
